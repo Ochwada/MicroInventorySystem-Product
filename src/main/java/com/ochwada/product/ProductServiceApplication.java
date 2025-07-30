@@ -32,7 +32,7 @@ public class ProductServiceApplication {
         // List of expected keys to load from the .env file
         String[] envVars =
                 {
-                        "DB_PASSWORD",
+                        "POSTGRES_PASSWORD",
                         "INVENTORY_SERVICE_URL"
                 };
         // Iterate through keys and set them as JVM system properties if found

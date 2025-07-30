@@ -9,6 +9,7 @@ import lombok.*;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -48,7 +49,7 @@ public class ProductService {
                                 product,
                                 client.getStockQuantity(product.getId())
                         )
-                ).toList();
+                ).collect(Collectors.toList());
         return allProducts;
     }
 
