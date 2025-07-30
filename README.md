@@ -13,19 +13,27 @@ This is the **Product Service**, a core component in a microservices-based archi
 - RESTful API design with Spring Boot
 - Clean architecture using DTOs and mappers
 - Configurable service URL via application properties
+- Validates input using Spring's bean validation
+- Environment variable support via `.env` file using `dotenv-java`
+- Database configuration via `application.properties`
+- Docker support with PostgreSQL integration
 
 ---
 
 ## 🛠 Tech Stack
-
-- Java 17+
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- Lombok
-- RestTemplate
-- H2 / PostgreSQL (configurable)
-- Maven
+| Technology           | Purpose                                                            |
+|----------------------|--------------------------------------------------------------------|
+| **Java 17+**         | Primary programming language                                       |
+| **Spring Boot**      | Rapid application development framework                            |
+| **Spring Web (MVC)** | Build RESTful APIs, embedded Tomcat server                         |
+| **Spring Data JPA**  | Database interaction using repositories and Hibernate ORM          |
+| **PostgreSQL**       | Production-ready relational database                               |
+| **H2**               | In-memory database (optional for development/test)                 |
+| **Lombok**           | Reduces boilerplate (e.g., `@Getter`, `@Setter`, `@Builder`)       |
+| **RestTemplate**     | Simplified HTTP client for inter-service communication             |
+| **dotenv-java**      | Load `.env` configuration variables in Java                        |
+| **Maven**            | Build tool and dependency manager                                  |
+| **Docker Compose**   | Orchestrates microservices and PostgreSQL containers for local dev |
 
  
 
@@ -87,4 +95,7 @@ Example response:
   "description": "High-performance laptop",
   "quantity": 24
 }
+```
+## 🐳 Docker Integration
 
+The `docker-compose.yml` file can be used to spin up this microservice along with PostgreSQL:

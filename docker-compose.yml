@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  # -------------------------------------------
+  # 🧩 Microservice: Product Service
+  # Description: Manages product data and communicates with inventory service
+  # Port: Exposes 9090 on host
+  # Depends on: PostgreSQL container (products_db)
+  # -------------------------------------------
+  product-service:
+    build:
+      dockerfile: Dockerfile               # Dockerfile for building the Spring Boot app
+    container_name: product-service
+    ports:
+      - "9090:9090"                        # Maps container port 9090 to host port 9090
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://products_db:5432/products  # DB connection URL
+      SPRING_DATASOURCE_USERNAME: postgres                                 # DB username
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD}                           # Loaded from .env
+    depends_on:
+      - products_db                     # Ensure DB is ready before service starts
+    networks:
+      - backend                         # Use shared network for service discovery
+
+  # -------------------------------------------
+  # 🗄️ PostgreSQL Database Service
+  # Description: PostgreSQL container for storing product data
+  # Port: Maps PostgreSQL port 5432 to host port 5433
+  # -------------------------------------------
+  products_db:
+    image: postgres:15                  # Uses official PostgreSQL image
+    container_name: products_db
+    environment:
+      POSTGRES_DB: products             # Database name
+      POSTGRES_USER: postgres           # DB user
+      POSTGRES_PASSWORD: ${DB_PASSWORD} # DB password (loaded from .env)
+    ports:
+      - "5433:5432"                     # Map container 5432 to host 5433
+    networks:
+      - backend                         # Shared network for inter-service communication
+
+# -------------------------------------------
+# 🔗 Network Configuration
+# Description: Enables internal communication between services
+# -------------------------------------------
+networks:
+  backend:
+    driver: bridge
