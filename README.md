@@ -5,9 +5,11 @@
 ### [Microservice 3: Order Service](https://github.com/Ochwada/MicroInventorySystem-Order)
 
 
-**Microservice 1: Product Service**
+## Microservice 1: Product Service - Overview
 
-This is the **Product Service**, a core component in a microservices-based architecture designed to manage product-related data. It handles product creation, retrieval, and provides real-time stock availability by communicating with the external Inventory Service.
+This is the **Product Service**, a core component in a microservices-based architecture designed to manage 
+product-related data. It handles product creation, retrieval, and provides real-time stock availability by communicating 
+with the external Inventory Service.
 
 ---
 
