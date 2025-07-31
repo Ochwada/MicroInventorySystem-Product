@@ -35,7 +35,7 @@ services:
       POSTGRES_USER: postgres           # DB user
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # DB password (loaded from .env)
     ports:
-      - "5433:5432"                     # Map container 5432 to host 5433
+      - "5432:5432"                     # Map container 5432 to host 5433
     networks:
       - backend                         # Shared network for inter-service communication
 
