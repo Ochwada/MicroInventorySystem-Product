@@ -31,14 +31,6 @@ public class InventoryClient {
     @Value("${inventory.service.port}")
     private String inventoryServiceUrl;
 
-    /**
-     * Represents a request to check or update inventory for a specific product and quantity.
-     *
-     * @param productId the ID of the product
-     * @param quantity the quantity of the product involved in the inventory operation
-     */
-    public record InventoryRequest(Long productId, int quantity){ }
-
 
     /**
      * Retrieves the available stock quantity for the given product by making an HTTP GET request
@@ -72,4 +64,14 @@ public class InventoryClient {
                 Void.class // the returned results i.e. the type Void
         );
     }
+    // ================================= RECORD  ======================================
+    /**
+     * Represents a request to check or update inventory for a specific product and quantity.
+     *
+     * @param productId the ID of the product
+     * @param quantity the quantity of the product involved in the inventory operation
+     */
+    public record InventoryRequest(Long productId, int quantity){ }
+
+    // ==================================================================================
 }
