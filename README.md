@@ -1,7 +1,7 @@
 # 🛒 MicroInventorySystem-Product
 
 ---
-###  [Micro Inventory System 🍀 Overview Repository ](https://github.com/Ochwada/MicroInventorySystem-Product)
+###  [Micro Inventory System 🍀 Overview Repository ](https://github.com/Ochwada/InventoryManagementSystem-MicroservicesArchitecture)
 For the Microservices ⬇️
 #### 🔗 [Microservice 1: Product Service](https://github.com/Ochwada/MicroInventorySystem-Product)
 #### 🔗 [Microservice 2: Inventory Service](https://github.com/Ochwada/MicroInventorySystem-Inventory)
