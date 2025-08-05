@@ -20,51 +20,61 @@
     </properties>
 
     <dependencies>
-        <!-- Java Bean validation support (e.g., @NotNull, @Email) -->
+        <!-- Enables your app to act as an OAuth2 resource server.
+         Useful for securing endpoints using access tokens (e.g., from Auth0, Keycloak). -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
+            <version>2.7.5</version>
+        </dependency>
+
+        <!-- Java Bean Validation support using JSR-380.
+         Common annotations include @NotNull, @Size, @Email, etc. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- Enables building REST APIs using Spring MVC and an embedded Tomcat server -->
+        <!-- Spring MVC framework with embedded Tomcat.
+          Enables building RESTful APIs and web applications. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- Reduces boilerplate with annotations like @Getter, @Builder -->
+        <!-- Lombok reduces boilerplate in Java code.
+         Annotations like @Getter, @Setter, @Builder help keep code concise.
+         Marked as 'provided' since it's only needed at compile-time. -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.32</version>
+            <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
 
-
-        <!-- Adds support for Spring Data JPA and Hibernate-based ORM -->
+        <!--  Spring Data JPA integration.
+        Simplifies database operations using JPA and Hibernate. -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- PostgreSQL JDBC Driver -->
+        <!-- PostgreSQL JDBC driver.
+        Required at runtime to connect to a PostgreSQL database. -->
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
         </dependency>
 
-        <!-- .env loader-->
+        <!-- Loads environment variables from a .env file.
+        Helpful for managing configuration outside application.properties in development. -->
         <dependency>
             <groupId>io.github.cdimascio</groupId>
             <artifactId>dotenv-java</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
+
 
     </dependencies>
 
