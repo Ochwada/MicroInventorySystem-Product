@@ -51,7 +51,7 @@ public class SecurityConfig {
                                 })
                 );
 
-
-        return httpSecurity.build();
+        // Finalise and return the filter chain
+        return httpSecurity.build();  // returns SecurityFilterChain object and registers it with Spring.
     }
 }

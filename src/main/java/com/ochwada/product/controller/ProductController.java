@@ -17,6 +17,8 @@ import java.util.List;
  * Author: Ochwada
  * Date: Wednesday, 30.Jul.2025, 10:39 AM
  * Description: REST controller for exposing product-related HTTP endpoints.
+ * - By default the {@link com.ochwada.product.config.SecurityConfig} already enforces that every request must be
+ * authenticated.
  * Objective: Handle client requests for retrieving and adding products, and delegate the business logic to the
  * {@link ProductService}.
  * *******************************************************

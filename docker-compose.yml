@@ -17,6 +17,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://products_db:5432/products  # DB connection URL
       SPRING_DATASOURCE_USERNAME: postgres                                 # DB username
       SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}                           # Loaded from .env
+      SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: https://accounts.google.com
     depends_on:
       - products_db                     # Ensure DB is ready before service starts
     networks:
